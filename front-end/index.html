@@ -16,12 +16,13 @@
         left: 50%;
         transform: translate(-50%, -50%);
       }
+      
       map-wrapper {
         display: block;
         width: 60vw;
         height: 90vh;
         background: white;
-        position: relative;
+        position: absolute;
     }
     </style>
     <script>
@@ -66,14 +67,40 @@
         </header>
     </div>
 
+    <div class="text-wrapper">
+      <h2 style="color: #424242;">신고하기</h2>
+      <div>
+        <p>이름</p>
+        <input type="text" placeholder="홍길동" >
+      </div>
+      <div>
+        <p>위치</p>
+        <input type="text" placeholder="서울특별시 동작구 상도로 369" >
+      </div>
+      <div>
+        <p>심각도</p>
+        <input type="range" min="1" max="10" value="5" class="slider" id="myRange">
+        <p>값: <span id="value"></span></p>
+      </div>
+      <div>
+        <p>메세지</p>
+        <input type="text" placeholder="메세지 입력하기" >
+      </div>
+    </div>
+    
     <map-wrapper>
-        <div id="map"></div>
+      <div id="map"></div>
     </map-wrapper>
-
     <!-- Async script executes immediately and must be after any DOM elements used in callback. -->
     <script
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB8eefa7TrqNdo-varza_IA4VP4BBdT_Jk&callback=initMap&libraries=&v=weekly"
-      async
-    ></script>
+      async>
+        var slider = document.getElementById("myRange");
+        var output = document.getElementById("value");
+        output.innerHTML = slider.value;
+
+        slider.oninput = function() {
+          output.innerHTML = this.value;}
+      </script>
   </body>
 </html>
