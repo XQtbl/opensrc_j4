@@ -63,11 +63,20 @@ function readData(cate) {
         });
     });
 }
+
 // console.log("read data");
-// readData("화재").then((resolveData) => {
-//     console.log(resolveData);
-// });
-// console.log("finish");
+// var arr = [];
+
+// readData("화재")
+//     .then((resolveData) => {
+//         // console.log(resolveData);
+//         arr.push(resolveData);
+//     })
+//     .then(() => {
+//         console.log(arr);
+//         console.log("finish");
+//     });
+
 module.exports.insertDB = insertData;
 module.exports.readDB = readData;
 // db.close();
