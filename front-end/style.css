@@ -124,13 +124,6 @@ header ul > li {
     width:80%;
 }
 
-#contact-form input[type='message']{ // input type 접근 !!!
-    border:#ccc 1px solid;
-    border-radius:5px;
-    height: 200px;
-    width:80%;
-}
-
 #contact-form input[type='submit']{ // input type 접근 !!!
     width: 200px;
     padding: 12px 18px;
@@ -138,7 +131,7 @@ header ul > li {
     background: #fa6e3e;
     border:0;
     border-radius: 5px;
-    float:right;
+    
     display:block;
 }
 
@@ -153,4 +146,10 @@ header ul > li {
     color: #666;
     font-size: 80%;
 
+}
+
+textarea{
+    border:#ccc 1px solid;
+    border-radius:5px;
+    resize: none;
 }
