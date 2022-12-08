@@ -68,24 +68,32 @@
     </div>
 
     <div class="text-wrapper">
-      <h2 style="color: #424242;">신고하기</h2>
-      <div>
-        <p>이름</p>
-        <input type="text" placeholder="홍길동" >
-      </div>
-      <div>
-        <p>위치</p>
-        <input type="text" placeholder="서울특별시 동작구 상도로 369" >
-      </div>
-      <div>
-        <p>심각도</p>
-        <input type="range" min="1" max="10" value="5" class="slider" id="myRange">
-        <p>값: <span id="value"></span></p>
-      </div>
-      <div>
-        <p>메세지</p>
-        <input type="text" placeholder="메세지 입력하기" >
-      </div>
+      <form id="contact-form">
+        <header id="content-header">    
+          <h3>신고하기</h3>      
+        </header>      
+        <div>      
+          <label>신고내용*</label>      
+          <input type="text">  
+        </div>      
+        <div>      
+          <label>위치*</label>      
+          <input type="text">      
+        </div>      
+        <div>      
+          <label>심각도*</label>      
+          <input type="text">      
+        </div>      
+        <div>      
+          <label>메세지</label>      
+          <input type="message">
+        </div>      
+        <div>      
+          <em>* 필요한 정보</em>      
+          <input type="submit" value="신고하기">      
+        </div>      
+        <div class="clearfix"></div>      
+      </form>
     </div>
     
     <map-wrapper>
