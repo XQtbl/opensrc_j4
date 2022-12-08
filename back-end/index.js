@@ -5,28 +5,25 @@ const app = express();
 const port = 3000;
 
 app.use(cors());
+app.use(express.urlencoded());
+app.use(express.json());
 
 app.get("/", function (req, res) {
     res.send("this is a server for SSU opensource project.");
 });
 
-app.get("/sound/:name", (req, res) => {
-    const { name } = req.params;
-
-    if (name === "dog") {
-        res.json({ sound: "멍멍" });
-    } else if (name === "cat") {
-        res.json({ sound: "야옹" });
-    } else {
-        res.json({ sound: "알 수 없음" });
-    }
-});
-
-app.get("/database/insert", (req, res) => {
-    var contents = req.query;
-
-    db.insertDB(contents[0], contents[1], contents[2], "메모");
-    res.send("HI");
+app.post("/database/insert", (req, res) => {
+    var contents = req.body.data;
+    db.insertDB(
+        contents.cate,
+        contents.address,
+        contents.seriousness,
+        contents.memo
+    );
+    db.readDB(contents.cate).then((resolveData) => {
+        res.send(resolveData);
+        console.log(resolveData);
+    });
 });
 
 app.listen(port);
