@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>req test</title>
+    </head>
+    <body>
+        <h1 id="sound"></h1>
+        <input id="name" type="text" />
+        <button onclick="getSound()">API 요청</button>
+        <button onclick="postData()">post data</button>
+        <script>
+            function getSound() {
+                const name = document.getElementById("name").value;
+                fetch(`http://localhost:3000/sound/${name}`)
+                    .then((response) => response.json())
+                    .then((data) => {
+                        console.log(data.sound);
+                        document.getElementById("sound").innerHTML = data.sound;
+                    });
+            }
+            function postData() {
+                var obj = {
+                    cate: "압사",
+                    address: "동작구",
+                    seriousness: "1",
+                    memo: "지진~",
+                };
+                fetch(`http://localhost:3000/database/insert`, {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify({
+                        data: obj,
+                    }),
+                })
+                    .then((response) => response.json())
+                    .then((data) => {
+                        document.getElementById("sound").innerHTML =
+                            data.foreach((element, idx) => {
+                                console.log(idx + element.cate);
+                            });
+                    });
+            }
+        </script>
+    </body>
+</html>
