@@ -1,0 +1,14 @@
+# Visual Studio Code
+.vscode/
+
+# dotenv
+.env
+
+# Typescript
+dist/
+
+# NPM
+node_modules/
+
+# DB
+db.sqlite3
