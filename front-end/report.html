@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <title>긴급 조회 시스템</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+    <style type="text/css">
+      /* Set the size of the div element that contains the map */
+      #map {
+        height: 90%;
+        width: 90%;
+        margin: auto;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+      
+      map-wrapper {
+        display: block;
+        width: 60vw;
+        height: 90vh;
+        background: white;
+        position: absolute;
+    }
+    </style>
+    <script>
+      // Initialize and add the map
+      function initMap() {
+        // The location of Soongsil
+        const Soongsil = { lat: 37.496, lng: 126.957 };
+        // The map, centered at Uluru
+        const map = new google.maps.Map(document.getElementById("map"), {
+          zoom: 13,
+          center: Soongsil,
+        });
+        // The marker, positioned at Uluru
+        const marker = new google.maps.Marker({
+          position: Soongsil,
+          map: map,
+        });
+      }
+    </script>
+  </head>
+  <body>
+
+    <div class="page">
+        <header>
+            <h2 style="color:#FE642E">긴급 신고 시스템</h2>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li>
+                    <form>
+                        <a href="#">
+                            <button class="favorite styled" type="button">
+                                    신고용 화면 가기
+                            </button>
+                        </a>
+                    </form>
+                    </li>
+                    <li><a href="inquiry.html">조회용 화면 가기</a></li>
+                    <li><a href="get-in-touch.html">Get In Touch</a></li>
+                </ul>
+            </nav>
+        </header>
+    </div>
+
+    <div class="text-wrapper">
+      <form id="contact-form">
+        <header id="content-header">    
+          <h3>신고하기</h3>      
+        </header>      
+        <div>      
+          <label>신고내용*</label>      
+          <input type="text">  
+        </div>      
+        <div>      
+          <label>위치*</label>      
+          <input type="text">      
+        </div>      
+        <div>      
+          <label>심각도*</label>      
+          <input type="text">      
+        </div>      
+        <div>      
+          <label>메세지</label>      
+          <textarea name="" id="" cols="82" rows="10"></textarea>
+        </div>      
+        <div>      
+          <em>* 필요한 정보</em>      
+          <input type="submit" value="신고하기">      
+        </div>      
+        <div class="clearfix"></div>      
+      </form>
+    </div>
+    
+    <map-wrapper>
+      <div id="map"></div>
+    </map-wrapper>
+    <!-- Async script executes immediately and must be after any DOM elements used in callback. -->
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB8eefa7TrqNdo-varza_IA4VP4BBdT_Jk&callback=initMap&libraries=&v=weekly"
+      async>
+        var slider = document.getElementById("myRange");
+        var output = document.getElementById("value");
+        output.innerHTML = slider.value;
+
+        slider.oninput = function() {
+          output.innerHTML = this.value;}
+      </script>
+  </body>
+</html>
