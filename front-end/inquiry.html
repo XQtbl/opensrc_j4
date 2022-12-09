@@ -73,6 +73,15 @@
             <h3>조회하기</h3>
         </header>
       </form>
+      <div id="warning">
+        <p>
+            최근 3시간 이내에 서울 전체에서 다수의 화재 신고를 확인하였습니다.<br>
+            현재의 재난 단계 2에서 재난 단계 3으로 격상할 것을 건의합니다.<br>
+            격상하시겠습니까?
+        </p>
+        <input id="confirm" type="submit" value="격상">
+        <input id="discard" type="submit" value="무시">
+      </div>
       <form id="inquiry-form">
         <div class="clearfix"></div>      
       </form>
@@ -103,8 +112,9 @@
             </tr>
         </tbody>
       </table>
+      <input id="view-more" type="submit" value="더보기">
     </div>
-    
+
     <map-wrapper>
       <div id="map"></div>
     </map-wrapper>
