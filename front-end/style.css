@@ -153,3 +153,81 @@ textarea{
     border-radius:5px;
     resize: none;
 }
+
+.inquiry-table {
+    display: block;
+    width: 40vw;
+    height: 81vh;
+    background: white;
+    position: absolute;
+    top: 12vh;
+    left: 60vw;
+}
+
+/* #inquiry-form {
+    padding:10px 15px 15px 15px;
+    /* border:4px solid #4ea0d8; */
+    /* border-radius: 10px; */
+/* } */
+
+.inquiry-table table {
+    border: 1px solid rgb(163, 159, 159);
+    font-size: 12px;
+    border-spacing: 0;
+    border-collapse: collapse;
+}
+
+.inquiry-table thead {
+}
+
+.inquiry-table tr {
+    padding: 0 0 0 0;
+    border: 0 0 0 0;
+    margin: 0 0 0 0;
+}
+
+.inquiry-table td {
+    padding: 0px 5px 0px 5px;
+}
+
+.inquiry-table .danger-box {
+    color: white;
+    width: 20px;
+    padding: 10px 10px;
+}
+
+.inquiry-table .empty-space {
+    width: 70px;
+}
+
+/* danger color */
+.inquiry-table .dc0 {
+    background-color: #32e609
+}
+.inquiry-table .dc1 {
+    background-color: #5feb1a
+}
+.inquiry-table .dc2 {
+    background-color: #99f23a
+}
+.inquiry-table .dc3 {
+    background-color: #caf23a
+}
+.inquiry-table .dc4 {
+    background-color: #ecf23a
+}
+.inquiry-table .dc5 {
+    background-color: #f2dd3a
+}
+.inquiry-table .dc6 {
+    background-color: #ffbc47
+}
+.inquiry-table .dc7 {
+    background-color: #fa8b23
+}
+.inquiry-table .dc8 {
+    background-color: #ed5c13
+}
+.inquiry-table .dc9 {
+    background-color: #ed1313
+}
